@@ -48,11 +48,13 @@
         flex-direction: row;
         align-items: center;
         gap: 1.25rem;
+        z-index: 99;
 
         img {
             width: 2rem;
             height: 2rem;
             border-radius: 1rem;
+            
         }
 
         .notifications_container {

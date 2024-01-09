@@ -4,11 +4,16 @@
     background-color: $secondary-color;
     padding: 0.4rem 0.5rem;
     border-radius: 10px;
-    width: max-content;
+    // width: max-content;
 
     &.active {
         background-color: $text-color;
         color: $secondary-color;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 400;
     }
 }
 
