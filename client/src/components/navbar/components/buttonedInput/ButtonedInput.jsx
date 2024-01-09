@@ -4,7 +4,7 @@ import './ButtonedInput.scss'
 
 const ButtonedInput = () => {
   return (
-    <div className='container'>
+    <div className='input_container'>
         <input 
             type="text"
             placeholder='Search'

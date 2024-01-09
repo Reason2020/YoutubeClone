@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.tag_card {
+    background-color: $secondary-color;
+    padding: 0.4rem 0.5rem;
+    border-radius: 10px;
+    width: max-content;
+
+    &.active {
+        background-color: $text-color;
+        color: $secondary-color;
+    }
+}
+

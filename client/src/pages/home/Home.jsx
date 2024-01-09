@@ -1,10 +1,18 @@
 import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
+import './Home.scss'
+import Sidebar from '../../components/sidebar/Sidebar'
+import VideosContainer from '../../components/videosContainer/VideosContainer'
+import TagsContainer from '../../components/tagsContainer/TagsContainer'
 
 const Home = () => {
   return (
-    <div>
-        <Navbar />
+    <div className='container'>
+        <Sidebar />
+        <div className="main_box">
+          <TagsContainer />
+          <VideosContainer />
+        </div>
+        
     </div>
   )
 }

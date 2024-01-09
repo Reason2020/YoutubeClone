@@ -13,6 +13,14 @@
         gap: 0.75rem;
         align-items: center;
 
+        .sidebar_toggler {
+            background-color: $secondary-color;
+            border: none;
+            padding: 5%;
+            border-radius: 50%;
+            color: $text-color;
+        }
+
         img {
             width: 8rem;
             object-fit: contain;
@@ -25,6 +33,7 @@
         gap: 1rem;
         flex: 1;
         justify-content: center;
+        align-items: center;
 
         .microphone {
             background-color: $secondary-color;
