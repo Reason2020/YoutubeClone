@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.video_card {
+    display: flex;
+    flex-direction: column;
+
+    &.sidebar_open {
+        width: calc(33.33% - 1rem);
+    }
+
+    &.sidebar_closed {
+        width: calc(25% - 1rem);
+    }
+
+    .thumbnail_logo {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .video_details {
+        margin-top: 0.7rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 25px;
+        }
+
+        .video_description {
+            font-size: 16px;
+            color: #aaa;
+
+            .video_title {
+                font-weight: 600;
+                color: $text-color;
+                margin-bottom: 0.5rem;
+            }
+
+            .channel_name {
+                margin-bottom: 0.2rem;
+            }
+        }
+    }
+}
