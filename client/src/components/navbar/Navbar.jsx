@@ -50,15 +50,19 @@ const Navbar = () => {
                 className='notifications_container'
                 onClick={toggleNotifications}>
                 {
-                    !notificationsOpen ? <NotificationsNoneOutlined
-                    sx={{
-                        fontSize: '1.7rem'
-                    }} 
-                /> : <Notifications 
-                        sx={{
-                            fontSize: '1.7rem'
-                        }}
-                    />
+                    !notificationsOpen ? (
+                        <NotificationsNoneOutlined
+                            sx={{
+                                fontSize: '1.7rem'
+                            }} 
+                        />
+                    ) : (
+                        <Notifications 
+                            sx={{
+                                fontSize: '1.7rem'
+                            }}
+                        />
+                    )
                 }
                 <div className="notifications_count">
                     <p>9+</p>
