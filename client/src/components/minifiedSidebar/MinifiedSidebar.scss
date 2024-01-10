@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.minified_sidebar {
+    position: sticky;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .minified_sidebar_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        width: 100%;
+        padding: 1rem 0.5rem;
+        border-radius: 8px;
+
+        .minified_sidebar_item_title {
+            font-size: 10px;
+            color: $text-color;
+        }
+
+        &:hover {
+            background-color: $secondary-color;
+            cursor: pointer;
+        }
+    }
+}

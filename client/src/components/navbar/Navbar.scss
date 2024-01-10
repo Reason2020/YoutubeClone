@@ -19,11 +19,16 @@
         align-items: center;
 
         .sidebar_toggler {
-            background-color: $secondary-color;
             border: none;
             padding: 5%;
             border-radius: 50%;
             color: $text-color;
+            background: none;
+
+            &:hover {
+                background-color: $secondary-color;
+                cursor: pointer;
+            }
         }
 
         img {
@@ -59,7 +64,7 @@
             width: 2rem;
             height: 2rem;
             border-radius: 1rem;
-            
+            cursor: pointer;
         }
 
         .notifications_container {
@@ -88,6 +93,10 @@
                     width: 100%;
                     text-align: center;
                 }
+            }
+
+            &:hover {
+                cursor: pointer;
             }
         }
     }
