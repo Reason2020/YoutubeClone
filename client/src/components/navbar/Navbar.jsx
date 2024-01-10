@@ -6,9 +6,12 @@ import ButtonedInput from './components/buttonedInput/ButtonedInput'
 import DummyProfile from '../../assets/pp.jpg'
 import './Navbar.scss';
 import SidebarContext from '../../contexts/SidebarContext'
+import NotificationsContext from '../../contexts/NotificationsContext'
+import NotificationsContainer from '../notificationsContainer/NotificationsContainer'
 
 const Navbar = () => {
     const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext);
+    const { notificationsOpen, toggleNotifications } = useContext(NotificationsContext);
 
     const toggleSidebarStatus = () => {
         const sidebarStatus = sidebarOpen;
@@ -43,7 +46,9 @@ const Navbar = () => {
                     fontSize: '1.7rem'
                 }} 
                 />
-            <div className='notifications_container'>
+            <button 
+                className='notifications_container'
+                onClick={toggleNotifications}>
                 <NotificationsNoneOutlined
                     sx={{
                         fontSize: '1.7rem'
@@ -52,7 +57,7 @@ const Navbar = () => {
                 <div className="notifications_count">
                     <p>9+</p>
                 </div>
-            </div>
+            </button>
             <img src={DummyProfile} alt="User Profile" className='user_profile' />
         </div>
     </nav>

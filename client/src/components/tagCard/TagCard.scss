@@ -4,7 +4,7 @@
     background-color: $secondary-color;
     padding: 0.4rem 0.5rem;
     border-radius: 10px;
-    // width: max-content;
+    z-index: 2;
 
     &.active {
         background-color: $text-color;

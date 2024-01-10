@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.notifications_box_container {
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+    background-color: $secondary-color;
+    border-radius: 20px;
+    // padding: 1.3rem;
+    z-index: 99;
+    width: 30%;
+
+    .notifications_header_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid $grey-color;
+
+        .notifications_header {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 1.3rem;
+        }
+    }
+}
+

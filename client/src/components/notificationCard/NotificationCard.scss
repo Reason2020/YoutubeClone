@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.notification_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem 1rem 0.2rem;
+
+    .notification_channel_logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        margin-left: 1.2rem;
+    }
+
+    .notifications_detail {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .notification_title {
+            color: $text-color;
+            font-size: 14px;
+        }
+
+        .notification_time {
+            font-size: 13px;
+            color: rgb(173, 173, 173);
+        }
+    }
+
+    .notification_thumbnail_logo {
+        width: 90px;
+        height: 50px;
+        border-radius: 10px;
+        margin-right: 1.2rem;
+        object-fit: contain;
+    }
+
+    &:hover {
+        background-color: $grey-color;
+    }
+}
+

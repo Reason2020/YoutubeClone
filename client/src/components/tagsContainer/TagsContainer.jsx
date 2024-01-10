@@ -9,13 +9,10 @@ const TagsContainer = () => {
 
   const handleArrowClick= (direction) => {
     const tagsListContainerWidth = tagsListRef.current.clientWidth - 1000;
-    console.log("Width: ", tagsListContainerWidth);
-    console.log("Distance: ", distance);
     if (direction === "left" && distance !== 0) {
       let newDistance = distance;
       setDistance(prevDistance => prevDistance + 100);
       newDistance += 100;
-      console.log(newDistance);
       tagsListRef.current.style.transform = `translateX(${newDistance}px)`
     } else if (direction === "right" && distance > -tagsListContainerWidth) {
       let newDistance = distance;

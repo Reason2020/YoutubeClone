@@ -6,6 +6,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.2rem 1rem;
+    position: sticky;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+    background-color: $primary-color;
 
     .left_part {
         display: flex;
@@ -60,6 +65,9 @@
         .notifications_container {
             padding: 0 10px;
             position: relative;
+            background: none;
+            border: none;   
+            color: $text-color;
 
             .notifications_count {
                 position: absolute;
