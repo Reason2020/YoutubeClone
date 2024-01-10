@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import mainLogo from '../../assets/main-logo.jpg'
-import { DensityMedium, MicSharp, NotificationsNoneOutlined, VideoCallOutlined } from '@mui/icons-material'
+import { DensityMedium, MicSharp, Notifications, NotificationsNoneOutlined, VideoCallOutlined } from '@mui/icons-material'
 import ButtonedInput from './components/buttonedInput/ButtonedInput'
 import DummyProfile from '../../assets/pp.jpg'
 import './Navbar.scss';
@@ -49,11 +49,17 @@ const Navbar = () => {
             <button 
                 className='notifications_container'
                 onClick={toggleNotifications}>
-                <NotificationsNoneOutlined
+                {
+                    !notificationsOpen ? <NotificationsNoneOutlined
                     sx={{
                         fontSize: '1.7rem'
                     }} 
-                />
+                /> : <Notifications 
+                        sx={{
+                            fontSize: '1.7rem'
+                        }}
+                    />
+                }
                 <div className="notifications_count">
                     <p>9+</p>
                 </div>

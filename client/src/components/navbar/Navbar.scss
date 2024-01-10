@@ -68,6 +68,12 @@
             background: none;
             border: none;   
             color: $text-color;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $secondary-color;
+                border-radius: 50px;
+            }
 
             .notifications_count {
                 position: absolute;
