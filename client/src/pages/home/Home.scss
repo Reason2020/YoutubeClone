@@ -4,7 +4,6 @@
     align-items: flex-start;
     width: 100%;
     padding: 0.6rem;
-    gap: 3rem;
 
     .main_box {
         flex: 1;
@@ -13,5 +12,13 @@
         align-items: flex-start;
         overflow: hidden;
         position: relative;
+    }
+
+    &.sidebaropen {
+        gap: 3rem;
+    }
+
+    &.sidebarclosed {
+        gap: 1.5rem;
     }
 }
