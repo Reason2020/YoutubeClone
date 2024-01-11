@@ -3,6 +3,7 @@
 .video_card {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 
     &.sidebar_open {
         width: calc(33.33% - 1rem);

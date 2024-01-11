@@ -3,12 +3,15 @@ import thumbnailLogo from '../../assets/thumbnail.webp'
 import channelLogo from '../../assets/channelLogo.jpg'
 import './VideoCard.scss'
 import SidebarContext from '../../contexts/SidebarContext'
+import { Link } from 'react-router-dom'
 
-const VideoCard = () => {
+const VideoCard = ({ videoId }) => {
     const { sidebarOpen } = useContext(SidebarContext);
 
   return (
-    <div className={`video_card ${sidebarOpen ? 'sidebar_open' : 'sidebar_closed'}`}>
+    <Link 
+      to={`/${videoId}`}
+      className={`video_card ${sidebarOpen ? 'sidebar_open' : 'sidebar_closed'}`}>
         <img src={thumbnailLogo} alt="Video Thumbnail" className='thumbnail_logo' />
         <div className="video_details">
             <img src={channelLogo} alt="Channel Logo" className='.channel_logo' />
@@ -18,7 +21,7 @@ const VideoCard = () => {
                 <p className="video_stats">2.2M views • 4 years ago</p>
             </div>
         </div>
-    </div>
+    </Link>
   )
 }
 

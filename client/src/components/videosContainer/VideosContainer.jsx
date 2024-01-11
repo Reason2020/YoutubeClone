@@ -9,7 +9,7 @@ const VideosContainer = () => {
     <div className='videos_container'>
       {
         dummyVideos.map((video, index) => (
-          <VideoCard key={index} />
+          <VideoCard key={index} videoId={index} />
         ))
       }
     </div>
