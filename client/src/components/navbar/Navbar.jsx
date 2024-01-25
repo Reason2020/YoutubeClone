@@ -25,7 +25,7 @@ const Navbar = () => {
                 <DensityMedium />
             </button>
             <Link to={'/'}>
-                <span className='logo_container'>
+                <span className='logo_container' title='YouTube Home'>
                     <img src={mainLogo} alt="Youtube Logo" />
                 </span>
             </Link>
