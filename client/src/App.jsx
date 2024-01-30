@@ -21,16 +21,16 @@ function App() {
         {
           path: '/:videoId',
           element: <VideoDetails />
-        },
-        {
-          path: '/login',
-          element: <Login />
-        },
-        {
-          path: '/signup',
-          element: <Signup />
         }
       ]
+    },
+    {
+      path: '/login',
+      element: <Login />
+    },
+    {
+      path: '/signup',
+      element: <Signup />
     }
   ])
 

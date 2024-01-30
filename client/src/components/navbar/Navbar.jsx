@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import mainLogo from '../../assets/main-logo.jpg'
+import mainLogo from '../../assets/main-logo-removebg-preview.png'
 import { DensityMedium, MicSharp, Notifications, NotificationsNoneOutlined, VideoCallOutlined } from '@mui/icons-material'
 import ButtonedInput from './components/buttonedInput/ButtonedInput'
 import DummyProfile from '../../assets/pp.jpg'
