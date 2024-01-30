@@ -26,11 +26,11 @@
             padding: 0.8rem;
             border-radius: 7px;
             outline: none;
-            border: none;
+            border: 1px solid $text-color;
             font-size: 0.9rem;
             font-weight: 600;
-            color: $secondary-color;
-            background-color: $text-color;
+            color: $text-color;
+            background-color: $primary-color;
 
             &:focus {
                 outline: none;

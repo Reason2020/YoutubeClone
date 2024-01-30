@@ -1,0 +1,89 @@
+@import '../../styles/variables.scss';
+
+.signup_container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 3rem;
+    margin: 0 auto;
+
+    .youtube_logo {
+        width: 15rem;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .signup_form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;   
+        
+        .input_field {
+            padding: 0.8rem;
+            border-radius: 7px;
+            outline: none;
+            border: 1px solid $text-color;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $text-color;
+            background-color: $primary-color;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                font-size: 0.9rem;
+                color: $grey-color;
+            }
+        }
+
+        .btn {
+            padding: 0.8rem;
+            background-color: $text-color;
+            border: none;
+            border-radius: 7px;
+            color: $secondary-color;
+        }
+
+        .signup {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .separator_text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $text-color;
+            margin: 0 auto;
+        }
+
+        .signup_with_google {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+
+            .google_logo {
+                width: 1.5rem;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .signup_with_google_text {
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .navigate_to_login_text {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $text-color;
+    }
+}
