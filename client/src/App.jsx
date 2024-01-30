@@ -1,6 +1,8 @@
 import './App.scss'
 import Layout from './Layout';
 import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 import VideoDetails from './pages/videoDetails/VideoDetails';
 import './styles/main.scss';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -19,6 +21,14 @@ function App() {
         {
           path: '/:videoId',
           element: <VideoDetails />
+        },
+        {
+          path: '/login',
+          element: <Login />
+        },
+        {
+          path: '/signup',
+          element: <Signup />
         }
       ]
     }
