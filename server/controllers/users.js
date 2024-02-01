@@ -54,6 +54,50 @@ const addNewUser = async (req, res) => {
     }
 }
 
+const loginUser = async (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        //check if username is valid
+        const userExists = await db.query('SELECT * FROM users WHERE username=$1', [ username ]);
+        if (userExists.rowCount !== 1) {
+            console.log('Invalid Username');
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid Password or Username'
+            });
+        }
+
+        const user = userExists.rows[0];
+        console.log('User: ', user);
+        //check if password is correct
+        console.log('We are here...');
+        const passwordCorrect = await bcrypt.compare(password, user.password);
+        console.log('Password is correct or not?', passwordCorrect);
+        if (!passwordCorrect) {
+            console.log('Invalid Password');
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid Password or Username'
+            })
+        }
+
+        //send user info 
+        res.status(200).json({
+            success: true,
+            message: 'Successfully logged in user',
+            user
+        });
+    } catch (err) {
+        console.log('Server failure!', err);
+        res.status(500).json({
+            success: false,
+            message: 'Server failure. Could not login user'
+        });
+    }    
+}
+
 module.exports = {
-    addNewUser
+    addNewUser,
+    loginUser
 }
