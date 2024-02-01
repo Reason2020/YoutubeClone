@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import mainLogo from '../../assets/main-logo-removebg-preview.png'
 import { DensityMedium, MicSharp, Notifications, NotificationsNoneOutlined, VideoCallOutlined } from '@mui/icons-material'
 import ButtonedInput from './components/buttonedInput/ButtonedInput'
@@ -8,10 +8,14 @@ import './Navbar.scss';
 import SidebarContext from '../../contexts/SidebarContext'
 import NotificationsContext from '../../contexts/NotificationsContext'
 import NotificationsContainer from '../notificationsContainer/NotificationsContainer'
+import UserContext from '../../contexts/UserContext'
 
 const Navbar = () => {
     const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext);
     const { notificationsOpen, toggleNotifications } = useContext(NotificationsContext);
+    const { user } = useContext(UserContext);
+
+    const navigate = useNavigate();
 
     const toggleSidebarStatus = () => {
         const sidebarStatus = sidebarOpen;
@@ -68,7 +72,13 @@ const Navbar = () => {
                     <p>9+</p>
                 </div>
             </button>
-            <img src={DummyProfile} alt="User Profile" className='user_profile' />
+            {user ? <img src={DummyProfile} alt="User Profile" className='user_profile' /> : (
+                <button 
+                    className='sign_in'
+                    onClick={() => navigate('/login')}>
+                    <p className="sign_in_text">SIGN IN</p>
+                </button>
+            )}
         </div>
     </nav>
   )
