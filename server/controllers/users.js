@@ -34,16 +34,20 @@ const addNewUser = async (req, res) => {
         //store user
         const user = await db.query("INSERT INTO users VALUES ($1, $2, $3, $4)", [ userId, username, email, hashedPassword ]);
 
-        if (!user) {
+        if (user.rowCount === 0) {
             return res.status(500).json({
                 success: false,
                 message: "Server failure. User Could Not Be Registered."
             });
         }
 
+        //get user
+        const registeredUser = await db.query('SELECT * FROM users WHERE username=$1', [ username ]);
+
         res.status(201).json({
             success: true,
             message: "User Registered Successfully.",
+            user: registeredUser.rows[0]
         });
     } catch (err) {
         console.log("Error adding new user: ", err);

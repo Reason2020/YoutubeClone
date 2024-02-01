@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import GoogleLogo from '../../assets/google-g.png'
 import YoutubeLogo from '../../assets/main-logo-removebg-preview.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Signup.scss';
+import { registerUser } from '../../api/users'; 
+import UserContext from '../../contexts/UserContext';
 
 const Signup = () => {
   const [ username, setUsername ] = useState("");
@@ -10,10 +12,24 @@ const Signup = () => {
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
 
+  const { setUser } = useContext(UserContext);
+
+  const navigate = useNavigate();
+
+  const handleUserRegistration = async (ev) => {
+    ev.preventDefault();
+    const response = await registerUser(username, email, password);
+    if (response.success) {
+      console.log('Register response: ', response);
+      setUser(response.user)
+      navigate('/');
+    }
+  }
+
   return (
     <div className='signup_container'>
       <img src={YoutubeLogo} alt="Youtube Logo" className='youtube_logo' />
-      <form className='signup_form'>
+      <form className='signup_form' onSubmit={handleUserRegistration}>
         <input 
           type="text" 
           className="input_field" 
@@ -36,7 +52,7 @@ const Signup = () => {
           placeholder='Password'
         />
         <input 
-          type="text" 
+          type="password" 
           className="input_field" 
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
